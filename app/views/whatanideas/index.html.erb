@@ -1,0 +1,33 @@
+<h1>Listing whatanideas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @whatanideas.each do |whatanidea| %>
+      <tr>
+        <td><%= whatanidea.name %></td>
+        <td><%= whatanidea.address %></td>
+        <td><%= whatanidea.description %></td>
+        <td><%= whatanidea.picture %></td>
+        <td><%= link_to 'Show', whatanidea %></td>
+        <td><%= link_to 'Edit', edit_whatanidea_path(whatanidea) %></td>
+        <td><%= link_to 'Destroy', whatanidea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Whatanidea', new_whatanidea_path %>
